@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework-14 | Leakhena</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+         .navbar-nav .nav-link {
+            position: relative;
+            padding-bottom: 8px;
+            transition: color 0.3s ease;
+            font-size: 14px;
+        }
+        .navbar-nav .nav-link::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 3px;
+            width: 100%;
+            background-color: #ffc107; 
+            transform: scaleX(0);
+            transform-origin: bottom left;
+            transition: transform 0.3s ease;
+            border-radius: 2px;
+        }
+        .navbar-nav .nav-link:hover::after,
+        .navbar-nav .nav-link.active::after {
+        transform: scaleX(1);
+        }
+        .navbar .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        .navbar .dropdown-menu .dropdown-item{
+            width: 200px;
+            padding: 8px;
+        }
+        .navbar .dropdown-menu .dropdown-item:hover{
+            color: #ffc107;
+        }
+        .carousel-inner{
+            position: relative;
+        }
+        .img::before{
+            background-color: rgba(0, 0, 0, 0.373);
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            left: 0;
+            z-index: 10;
+        }
+        .title{
+            font-size: 60px;
+            line-height: 70px;
+        }
+        .ruler{
+            width: 80px;
+            height: 20px;
+            border-bottom: 5px solid  #ffc107 ;
+            margin-left: 530px;
+            margin-bottom: 20px;
+        }
+        .button{
+            display: block;
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            padding-left: 45px;
+            padding-top: 6px;
+            width: 200px;
+            height: 50px;
+            border-radius: 50px;
+            border: 2px solid hsl(45, 100%, 51%);
+        }
+        .button:hover{
+            background-color:#ffc107 ;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar  navbar-expand-lg bg-transparent fixed-top py-4 navbar-dark">
+        <div class="container">
+          <a class="navbar-brand fw-bold fs-4" href="#">UpContruction<span class="text-warning">.</span></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end bg-dark text-white" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item me-3">
+                    <a class="nav-link active fw-bold " aria-current="page" href="#">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-bold" href="#">ABOUT</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link fw-bold" href="#">SERVICES</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link fw-bold" href="#">PROJECT</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link fw-bold" href="#">BLOG</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link  fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      DROPDOWN <span><i class="fa-solid fa-chevron-down text-secondary"></i></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Dropdown-1</a></li>
+                      <li><a class="dropdown-item" href="#">DeepDropdown</a></li>
+                      <li><a class="dropdown-item" href="#">Dropdown-2</a></li>
+                      <li><a class="dropdown-item" href="#">Dropdown-3</a></li>
+                      <li><a class="dropdown-item" href="#">Dropdown-4</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link fw-bold" href="#">CONTACT</a>
+                  </li>
+                </ul>
+            </div>
+          </div>
+        </div>
+    </nav>
+
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active position-relative" data-bs-interval="1500">
+                <img src="image/hero-carousel-1.jpg" class="d-block w-100" alt="Banner Image">
+                <div class=" overlay position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center" style="background: rgba(0, 0, 0, 0.669);">
+                    <div class="container pt-md-5">
+                        <h5 class="title fw-bold text-white text-center">Welcome to <br> UpContruction</h5>
+                        <div class="ruler mx-auto"></div>
+                        <p class="text text-white fs-5 text-center">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do <br> eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Ut <br> enim ad minim veniam, quis nostrud exercitation ullamco laboris <br> nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                        <a href="#" class="button btn-custom mt-3 mx-auto ">Get Started</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item active " data-bs-interval="1500">
+                <img src="image/hero-carousel-2.jpg" class="d-block w-100" alt="...">
+                <div class=" overlay position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center" style="background: rgba(0, 0, 0, 0.669);">
+                    <div class=" container pt-md-5 ">
+                        <h5 class="title fw-bold text-white text-center">Welcome to <br> UpContruction</h5>
+                        <div class="ruler  mx-auto"></div>
+                        <p class="text text-white fs-5 text-center">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do <br> eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Ut <br> enim ad minim veniam, quis nostrud exercitation ullamco laboris <br> nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                        <a href="#" class="button btn-custom mt-3 mx-auto ">Get Started</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item active" data-bs-interval="1500">
+                <img src="image/hero-carousel-3.jpg" class="d-block w-100" alt="...">
+                <div class=" overlay position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center" style="background:rgba(0, 0, 0, 0.669);">
+                  <div class="container pt-md-5">
+                        <h5 class="title fw-bold text-white text-center">Welcome to <br> UpContruction</h5>
+                        <div class="ruler  mx-auto"></div>
+                        <p class="text text-white fs-5 text-center">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do <br> eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Ut <br> enim ad minim veniam, quis nostrud exercitation ullamco laboris <br> nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                        <a href="#" class="button btn-custom mt-3 mx-auto">Get Started</a>
+                    </div>
+                </div>
+            </div>
+            <div class="courasel">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
